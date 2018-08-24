@@ -27,13 +27,13 @@ bst* insert(bst *root,int data)
 	}
 	return root;
 }
-void preorder(bst *root)
+void inorder(bst *root)
 {
 	if(!root)
 		return;
-	preorder(root->left);
+	inorder(root->left);
 	cout<<root->data<<" ";
-	preorder(root->right);
+	inorder(root->right);
 }
 bst *input(bst *set,int n1)
 {
@@ -60,7 +60,7 @@ void myUnion(bst *set1,bst *set2)
 	bst *unionRoot=NULL;
 	transfer(&unionRoot,set1);
 	transfer(&unionRoot,set2);
-	preorder(unionRoot);
+	inorder(unionRoot);
 }
 bool search(bst *root,int data)
 {
@@ -134,6 +134,6 @@ int main()
 	cout<<"\n\n\ The A-B is :\t";
 	subtract(&set1,set2);
 	//set1=deleteNode(set1,10);
-	preorder(set1);
+	inorder(set1);
 	return 0;
 }
